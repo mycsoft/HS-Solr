@@ -27,7 +27,7 @@ import org.bouncycastle.util.Strings;
  */
 public class BlobTransformer extends Transformer {
 
-    //FIXME 本类应该是通用可配置的.现在只是固定针对question的content字段.
+    //FIXME 本类应该是通用可配置的.现在只是固定针对所有byte[]字段,以及固定使用utf-8.
     private static final Log LOG = LogFactory.getLog(BlobTransformer.class);
 
     private String encoding = "utf-8";
