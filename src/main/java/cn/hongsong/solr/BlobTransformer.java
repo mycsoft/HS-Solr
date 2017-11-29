@@ -22,11 +22,15 @@ import org.bouncycastle.util.Strings;
 
 /**
  * Blob数据转换器.
- *
+ * 本类暂时不可用.题目解析可以使用{@link QuestionTransformer}
  * @author MaYichao
+ * @deprecated 
  */
 public class BlobTransformer extends Transformer {
 
+    //FIXME 本类应该是通用可配置的.现在只是固定针对question的content字段.
+    
+    
     private static final Log LOG = LogFactory.getLog(BlobTransformer.class);
 
     private String encoding = "utf-8";
