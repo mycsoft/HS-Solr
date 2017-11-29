@@ -1,5 +1,7 @@
 # HS-Solr
 ## BlobTransformer
+将Blob字段自动转为文本.
+
 使用范例:
 
  `<entity dataSource="main" name="q" query="select * from t_z_tion where content is not null"
