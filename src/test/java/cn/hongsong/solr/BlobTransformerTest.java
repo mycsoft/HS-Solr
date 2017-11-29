@@ -62,42 +62,42 @@ public class BlobTransformerTest {
         return c;
     }
 
-    /**
-     * Test of transformRow method, of class BlobTransformer.
-     */
-    @Test
-    public void testTransformRow() throws Exception {
-        System.out.println("transformRow");
-        //连接数据库
-//        Connection c = getConnection();
-//        Blob b = c.createBlob();
-        String expResult = "社会主义好";
-        Blob b = new com.mysql.cj.jdbc.Blob(expResult.getBytes("utf-8"), new ExceptionInterceptor() {
-            @Override
-            public ExceptionInterceptor init(Properties prprts, Log log) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-
-            @Override
-            public void destroy() {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-
-            @Override
-            public Exception interceptException(Exception excptn) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-        });
-
-        Map<String, Object> row = new HashMap<>();
-        row.put("content", b);
-        Context cntxt = null;
-        BlobTransformer instance = new BlobTransformer();
-        Map<String,Object> result = (Map)instance.transformRow(row, cntxt);
-        assertEquals(expResult, result.get("content"));
-        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-    }
+//    /**
+//     * Test of transformRow method, of class BlobTransformer.
+//     */
+//    @Test
+//    public void testTransformRow() throws Exception {
+//        System.out.println("transformRow");
+//        //连接数据库
+////        Connection c = getConnection();
+////        Blob b = c.createBlob();
+//        String expResult = "社会主义好";
+//        Blob b = new com.mysql.cj.jdbc.Blob(expResult.getBytes("utf-8"), new ExceptionInterceptor() {
+//            @Override
+//            public ExceptionInterceptor init(Properties prprts, Log log) {
+//                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//            }
+//
+//            @Override
+//            public void destroy() {
+//                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//            }
+//
+//            @Override
+//            public Exception interceptException(Exception excptn) {
+//                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//            }
+//        });
+//
+//        Map<String, Object> row = new HashMap<>();
+//        row.put("content", b);
+//        Context cntxt = null;
+//        BlobTransformer instance = new BlobTransformer();
+//        Map<String,Object> result = (Map)instance.transformRow(row, cntxt);
+//        assertEquals(expResult, result.get("content"));
+//        // TODO review the generated test code and remove the default call to fail.
+////        fail("The test case is a prototype.");
+//    }
 
     @Test
     public void testTransformRow_WithDB() throws Exception {
